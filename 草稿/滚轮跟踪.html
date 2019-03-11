@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        /*定制电梯按钮的样式*/
+        #main>.btn-group-vertical{
+            top:100px;
+            left:10px;
+        }
+       #main button:hover,#main button.active{
+            background-color: #e4393c;
+            border-color: #e4393c;
+        }
+        #main{
+            height:2250px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="btn-group-vertical position-fixed" role="group" aria-label="Basic example" id="daohang">
+            <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0 active">首页<br>推荐</button>
+            <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">最新<br>上架</button>
+            <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">热销<br>单品</button>
+        </div>
+    </div>
+    <script>
+        window.onscroll=function(){
+            var scrollTop=document.documentElement.scrollTop;
+            var button=daohang.children;
+            console.log(scrollTop);
+            if(scrollTop>500&&scrollTop<1000){
+              button[0].classList.remove("active");
+              button[1].classList.add("active");
+              button[2].classList.remove("active");
+               
+            }else if(scrollTop>1000&&scrollTop<1500){
+              button[1].classList.remove("active");
+              button[2].classList.add("active");
+              
+            }else{
+                button[0].classList.add("active");
+                button[1].classList.remove("active");
+            }
+        }
+    </script>
+</body>
+</html>

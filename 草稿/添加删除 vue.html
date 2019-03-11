@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+    <style>
+    body{
+       text-align: center;
+    }
+   
+    </style>
+</head>
+<body>
+    <div id="app"   v-flash><todo></todo></div><!--new vue 监听app-->
+    <template id="tplTodo">         <!--包裹所有内容的组件-->
+        <div>
+            <h2>代办项列表</h2>
+            <todo-add @add="addHandler"></todo-add>   <!--input 组件-->
+            <todo-list :list_tasks="tasks"></todo-list> <!--ul 组件-->
+        </div>
+    </template>
+    <template id="tplTodoAdd">      <!--包裹input内容的组件-->
+        <div >
+            <input type="text" v-model="newTask"  @keyup.13="add"  v-focus><button @click="add"  v-flash>添加</button>
+        </div>
+    </template>
+    <template id="tplTodoList">     <!--包裹ul内容的组件-->
+        <div>
+            <ul>
+                <li v-for="(task,i) of list_tasks"><todo-item :i="i" :task="task" @del="del"></todo-item></li><!--没有()绑定回调函数 有()调用 表示无参-->
+            </ul>
+        </div>
+    </template> 
+    <template id="tplTodoItem">     <!--包裹li内容的组件-->
+        <div >
+             <span v-flash>{{i+1}}——>{{task}}</span><button @click="del(i)"  v-flash>x</button>
+        </div>
+    </template>
+    <script>   
+        var todoAdd={  //包裹input内容的组件
+            template:"#tplTodoAdd",
+            data(){ return {newTask:""} },
+            methods:{
+                add(){
+                    this.$emit("add",this.newTask);
+                    this.newTask="";
+                },
+                search(){
+                       
+                    }
+            }
+        };
+        var todoItem={ //包裹li内容的组件
+            template:"#tplTodoItem",
+            props:["i","task"],
+            methods:{
+                del(i){this.$emit("del",i)}
+            },
+        };
+        var todoList={ //包裹ul内容的组件
+            template:"#tplTodoList",
+            props:["list_tasks"],  //即可让内部访问，又可让外部绑定   中间商，无差价
+            methods:{
+                del(i){this.list_tasks.splice(i,1)}
+            },
+            components:{todoItem}
+        };
+        Vue.component("todo",{      //包裹所有内容的组件
+            template:"#tplTodo",
+            data(){
+                return {
+                    tasks:["修身","养性","打飞机"],
+                    created:[""]
+                }
+            },
+            methods:{
+                addHandler(task){
+                        this.tasks.push(task)
+                }
+            },
+            components:{
+                todoAdd,todoList
+            }
+        })
+       // 自定义 颜色随机改变
+        Vue.directive("flash",{
+            inserted(el){
+                setInterval(function(){
+                    el.style.color=(function(){
+                        var r=Math.random()*255;
+                        var g=Math.random()*255;
+                        var b=Math.random()*255;
+                        return `rgb(${r},${g},${b})`
+                    })()
+                },100)
+            }
+        })
+        // 自定义 页面自动聚焦input  框
+        Vue.directive("focus",{
+            inserted(elem){ //当前input被加载到DOM树时自动执行
+                elem.focus(); //原生DOM
+            }
+        })
+        var vm=new Vue({
+            el:"#app",
+            data:{}
+        })
+        
+    </script>
+</body>
+</html>

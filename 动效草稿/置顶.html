@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+	body{height:2000px;}
+	.gototop{
+			position: fixed;
+		bottom: 20px;
+		right: 20px;
+		z-index: 999;
+		opacity: 0;
+		visibility: hidden;
+		transition: 1s;
+
+    }
+	.gototop a{
+			width: 60px;
+			height: 60px;
+			border-radius: 5px;
+			display: table;
+			background: rgba(0, 0, 0, 0.4);
+			color: #fff;
+			text-align: center;
+			line-height: 60px;
+			font-size:25px;
+			text-decoration: none;
+	}
+	
+	.gototop.active {
+			opacity: 1;
+			visibility: visible;
+		}
+  </style>
+  
+</head>
+<body>
+	
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop">↑</a>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$('.js-gotop').on('click', function(e){
+					e.preventDefault();
+					$('html, body').animate({
+						scrollTop: $('html').offset().top
+					}, 700);
+					return false;
+				});
+				$(window).scroll(function(){
+					var $win = $(window);
+					if ($win.scrollTop() >500) {
+						$('.js-top').addClass('active');
+					} else {
+						$('.js-top').removeClass('active');
+					}
+				});
+	</script>	
+</body>
+</html>

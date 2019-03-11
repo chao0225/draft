@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+#test{
+            width: 540px;
+            height: 500px;
+            background-color: red;
+            transition: all 1s;
+            position: absolute;
+            left: 10%;
+            top:10%;         
+           
+            transform-origin: 50% 50%;
+            background-image: url(xin.png);
+            animation: nn 1s infinite linear;
+         
+        }
+       
+        @keyframes nn{
+            0%{
+                transform: scale(.7, .7) translate(0px,0px);
+               
+            }
+            14%{
+                transform: scale(.9, .9) translate(30px,20px);
+                
+            }
+            28%{
+                transform: scale(1, 1) translate(50px,40px);
+               
+                
+            }
+            42%{
+                transform: scale(1.1, 1.1) translate(70px,60px);
+               
+            }
+            70%{
+                transform: scale(1, 1) translate(50px,40px);
+                
+            }
+            85%{
+                transform: scale(.9, .9) translate(30px,20px);
+                
+            }
+            100%{
+                transform: scale(.7, .7) translate(0px,0px);
+                
+            }
+           
+        }
+    </style>
+</head>
+<body>
+<div id="test"></div>
+
+    <script>
+    
+    </script>
+</body>
+</html>

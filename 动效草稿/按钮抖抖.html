@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	<style>
+	.cover-text {
+		width: 50%;
+		height: 600px;
+		position: relative;
+		bottom: 100px;
+		left:0;
+		background:rgba(0,0,0,.8);
+	}
+	.cover-text a {
+		position: absolute;
+		top: 150px;
+		margin-left:50px;
+		text-align: center;
+		line-height: 45px;
+		font-size: 25px;
+		padding-bottom: 2px;
+		color: #fff;
+		border-radius: 10px;
+		width: 106px;
+		height: 50px;
+		box-shadow: 0 0 20px #fff inset;
+		opacity: 1;
+		text-decoration: none;
+	}
+	.cover-text a:hover {
+    animation: shake 1s linear;
+}
+	</style>
+</head>
+<body>
+<div class="cover-text">
+  <a href="#" id="d1">more</a>
+</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$("#d1").hover(function(){
+    var $s=$(this)
+    if(!$s.is(":animated"))
+      $s.animate({left:5},100)
+        .animate({left:-10},100)
+
+		.animate({left:5},100)
+        .animate({left:-10},100)
+
+		.animate({left:5},100)
+        .animate({left:-10},100)
+    else $s.stop(true);
+  }) 
+	</script>
+</body>
+</html>

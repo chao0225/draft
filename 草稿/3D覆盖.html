@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://3.swiper.com.cn/demo/18-effect-coverflow.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+    body {
+        background: #f4f4f4;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .swiper-container .swiper-wrapper{
+        left:-400px;
+    }
+    .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 200px;
+        height: 380px;
+    }
+
+    /*红酒*/
+
+    ul{
+	list-style: none;
+	margin:0;
+    padding:0;
+    margin-bottom:0;
+}
+body{
+	background: #f4f4f4 !important;
+}
+     
+     ul li{
+		padding: 10px;
+		width: 195px;
+		border-left: 1px solid #ededed;
+		float: left;
+		border-top: 1px solid #ededed;
+        transition: all .3s;
+        background-color: #fff;
+        position: relative;
+		overflow: hidden;
+	}
+	
+
+	 li img{
+		width: 174px;
+		height: 234px;
+	
+		display: block;
+	}
+	 li p{
+		margin:0;
+		color: #383838;
+	}
+	li p span{
+		color: #6666ff;
+		width: 54px;
+		height: 18px;
+		text-align: center;
+		border: 1px solid #6666ff;
+		font-size: 12px;
+		border-radius: 3px;
+		padding: 0 2px;
+	}
+   ul li span{
+		padding-right:5px;
+	}
+	 h4{
+		color:pink;
+		
+		margin:3px 35px;
+	}
+	 h4+span{
+		margin-left:40px;
+	}
+	 li:hover {
+	
+		transform: translate3d(0, -5px, 0);
+		box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+    
+     ul li a{
+		transition: all 0.2s;
+		bottom: -50px;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		width: 100%;
+		height: 48px;
+		line-height: 48px;
+		text-decoration: none;
+		color: #ffffff;
+		font-weight: bold;
+		font-size: 14px;
+		text-align: center;
+		background: #a21459;
+		text-indent: 30px;
+	}
+	 ul li:hover a {
+		bottom: 0;
+	}
+	 ul li:hover a i {
+		transform:translateY(0px);
+	}
+ ul li a i{
+		background: url(../img/tubiao/in_png.png) 50px -1016px no-repeat;
+		display: block;
+		float: left;
+		width: 100%;
+		font-style:normal;
+		transition: all .5s;
+		
+		transform:translateY(-30px);
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container-horizontal swiper-container-3d swiper-container-coverflow" style="cursor: grab;">
+        <div class="swiper-wrapper" id="gu">
+
+            <div class="swiper-slide">
+                <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 3; transition-duration: 0ms;"></div>
+                <ul>
+                        <li>
+                            <img src="img/15788_270_270_20150615023442.jpg" alt="">
+                            <p>
+                                <span>跨境</span>
+                            克拉米伦城堡副牌干红葡萄酒2010 <br>
+                            PASTOURELLE DE 
+                            </p>
+                            <span>法国</span>|<span> 1855梅多克列级酒</span>
+                            <h4>¥ 459.00</h4>
+                            <span>新品特惠</span>
+                            <a href="javascript:;">
+                                    <i>加入购物车</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 2; transition-duration: 0ms;"></div>
+                <ul>
+                        <li>
+                            <img src="img/15788_270_270_20150615023442.jpg" alt="">
+                            <p>
+                                <span>跨境</span>
+                            克拉米伦城堡副牌干红葡萄酒2010 <br>
+                            PASTOURELLE DE 
+                            </p>
+                            <span>法国</span>|<span> 1855梅多克列级酒</span>
+                            <h4>¥ 459.00</h4>
+                            <span>新品特惠</span>
+                            <a href="javascript:;">
+                                    <i>加入购物车</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 1; transition-duration: 0ms;"></div>
+                <ul>
+                        <li>
+                            <img src="img/15788_270_270_20150615023442.jpg" alt="">
+                            <p>
+                                <span>跨境</span>
+                            克拉米伦城堡副牌干红葡萄酒2010 <br>
+                            PASTOURELLE DE 
+                            </p>
+                            <span>法国</span>|<span> 1855梅多克列级酒</span>
+                            <h4>¥ 459.00</h4>
+                            <span>新品特惠</span>
+                            <a href="javascript:;">
+                                    <i>加入购物车</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;">
+                        
+                </div>
+                <div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;">
+                       
+                </div>
+                <ul>
+                        <li>
+                            <img src="img/15788_270_270_20150615023442.jpg" alt="">
+                            <p>
+                                <span>跨境</span>
+                            克拉米伦城堡副牌干红葡萄酒2010 <br>
+                            PASTOURELLE DE 
+                            </p>
+                            <span>法国</span>|<span> 1855梅多克列级酒</span>
+                            <h4>¥ 459.00</h4>
+                            <span>新品特惠</span>
+                            <a href="javascript:;">
+                                    <i>加入购物车</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 4; transition-duration: 0ms;"></div>
+                <ul>
+                        <li>
+                            <img src="img/15788_270_270_20150615023442.jpg" alt="">
+                            <p>
+                                <span>跨境</span>
+                            克拉米伦城堡副牌干红葡萄酒2010 <br>
+                            PASTOURELLE DE 
+                            </p>
+                            <span>法国</span>|<span> 1855梅多克列级酒</span>
+                            <h4>¥ 459.00</h4>
+                            <span>新品特惠</span>
+                            <a href="javascript:;">
+                                    <i>加入购物车</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 4; transition-duration: 0ms;"></div>
+                <ul>
+                        <li>
+                            <img src="img/15788_270_270_20150615023442.jpg" alt="">
+                            <p>
+                                <span>跨境</span>
+                            克拉米伦城堡副牌干红葡萄酒2010 <br>
+                            PASTOURELLE DE 
+                            </p>
+                            <span>法国</span>|<span> 1855梅多克列级酒</span>
+                            <h4>¥ 459.00</h4>
+                            <span>新品特惠</span>
+                            <a href="javascript:;">
+                                    <i>加入购物车</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div>
+                <div class="swiper-slide-shadow-right" style="opacity: 4; transition-duration: 0ms;"></div>
+                <ul>
+                        <li>
+                            <img src="img/15788_270_270_20150615023442.jpg" alt="">
+                            <p>
+                                <span>跨境</span>
+                            克拉米伦城堡副牌干红葡萄酒2010 <br>
+                            PASTOURELLE DE 
+                            </p>
+                            <span>法国</span>|<span> 1855梅多克列级酒</span>
+                            <h4>¥ 459.00</h4>
+                            <span>新品特惠</span>
+                            <a href="javascript:;">
+                                    <i>加入购物车</i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+            </div>
+           
+        </div>
+       
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 30,
+            stretch: 10,
+            depth: 60,
+            modifier: 2,
+            slideShadows : true
+        }
+    });
+    </script>
+
+</body></html>

@@ -1,0 +1,179 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<title>树叶飘落动画 为你展示与你分享的各首单曲</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=500px, initial-scale=0.64">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+<!-- The leaves.css file animates the leaves 
+    <link rel="stylesheet" href="leaves.css" type="text/css" media="screen" charset="utf-8">
+  			 The leaves.js file creates the leaves 
+    <script src="leaves.js" type="text/javascript" charset="utf-8"></script>
+    -->
+<script>
+    	const NUMBER_OF_LEAVES = 30;
+function init()
+{
+    var container = document.getElementById('leafContainer');
+    for (var i = 0; i < NUMBER_OF_LEAVES; i++) 
+    {
+        container.appendChild(createALeaf());
+    }
+}
+function randomInteger(low, high)
+{
+    return low + Math.floor(Math.random() * (high - low));
+}
+function randomFloat(low, high)
+{
+    return low + Math.random() * (high - low);
+}
+function pixelValue(value)
+{
+    return value + 'px';
+}
+
+function durationValue(value)
+{
+    return value + 's';
+}
+function createALeaf()
+{
+    var leafDiv = document.createElement('div');
+    var image = document.createElement('img');
+    image.src = 'images/realLeaf' + randomInteger(1, 5) + '.png';
+    leafDiv.style.top = "-100px";
+    leafDiv.style.left = pixelValue(randomInteger(0, 500));
+    var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
+    leafDiv.style.webkitAnimationName = 'fade, drop';
+    image.style.webkitAnimationName = spinAnimationName;
+    var fadeAndDropDuration = durationValue(randomFloat(5, 11));
+    var spinDuration = durationValue(randomFloat(4, 8));
+    leafDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+    var leafDelay = durationValue(randomFloat(0, 5));
+    leafDiv.style.webkitAnimationDelay = leafDelay + ', ' + leafDelay;
+    image.style.webkitAnimationDuration = spinDuration;
+    leafDiv.appendChild(image);
+    return leafDiv;
+}
+window.addEventListener('load', init, false);
+    </script>
+<style>
+body {
+	background-color: #161616;
+}
+#container {
+	position: relative;
+	height: 700px;
+	width: 500px;
+	margin: 10px auto;
+	overflow: hidden;
+	background: #4E4226 url('images/backgroundLeaves.jpg') no-repeat top left;
+}
+#leafContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#message {
+	position: absolute;
+	background: rgba(255,204,51, 0.5);
+	/*top: 10px;*/
+	width: 100%;
+	height: 300px;
+	background: transparent url('images/textBackground.png') repeat-x center;
+	color: #5C090A;
+	font-size: 220%;
+	font-family: 'Georgia';
+	text-align: center;
+	/* padding: 20px 10px;*/
+	-webkit-box-sizing: border-box;
+	-webkit-background-size: 100% 100%;
+	z-index: 1;
+}
+p {
+	margin: 15px;
+}
+a {
+	color: #5C090A;
+	text-decoration: none;
+}
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+.phone {
+	font-size: 150%;
+	vertical-align: middle;
+}
+#leafContainer > div {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	-webkit-animation-iteration-count: infinite, infinite;
+	-webkit-animation-direction: normal, normal;
+	-webkit-animation-timing-function: linear, ease-in;
+}
+#leafContainer > div > img {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-transform-origin: 50% -100%;
+}
+@-webkit-keyframes fade {
+ 0% {
+opacity: 1;
+}
+ 95% {
+opacity: 1;
+}
+ 100% {
+opacity: 0;
+}
+}
+@-webkit-keyframes drop {
+ 0% {
+-webkit-transform: translate(0px, -50px);
+}
+ 100% {
+-webkit-transform: translate(0px, 650px);
+}
+}
+@-webkit-keyframes clockwiseSpin {
+ 0% {
+-webkit-transform: rotate(-50deg);
+}
+ 100% {
+-webkit-transform: rotate(50deg);
+}
+}
+@-webkit-keyframes counterclockwiseSpinAndFlip {
+ 0% {
+-webkit-transform: scale(-1, 1) rotate(50deg);
+}
+ 100% {
+-webkit-transform: scale(-1, 1) rotate(-50deg);
+}
+}
+</style>
+</head>
+<body>
+
+<div id="container"> 
+  <!-- The container is dynamically populated using the init function in leaves.js --> 
+  <!-- Its dimensions and position are defined using its id selector in leaves.css -->
+  <div id="leafContainer"></div>
+  <!-- its appearance, dimensions, and position are defined using its id selector in leaves.css -->
+ <audio src="http://link.hhtjim.com/163/489506275.mp3" controls="controls" autoplay="autoplay" style="opacity: .3">
+</audio>
+</div>
+
+
+</div>
+</body>
+</html>

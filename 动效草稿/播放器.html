@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>播放器</title>
+  <link rel="stylesheet" href="css/playbar.css">
+  <script src='js/jquery-1.11.3.js'></script>
+  <script src="js/playbar.js"></script>
+</head>
+<body>
+
+<div class="playbar_box">
+	<div class="playbar_bg">
+		<div class="trigger_up"></div>
+		<div class="playbar">
+			<div class="pb_btns">
+				<a href="javascript:;">
+					<i class="pre_icon"></i>
+				</a>
+				<a href="javascript:;" data-action="pause">
+					<i class="pau_icon"></i>
+				</a>
+				<a href="javascript:;">
+					<i class="nxt_icon"></i>
+				</a>
+			</div>
+			<div class="pb_cover">
+				<img src="img/default_album.jpg" alt="cover">
+			</div>
+			<div class="pb_play">
+				<div class="mu_title">
+					<span class="mu_name">The Good Side</span>
+					<span class="musician">Troye Sivan</span>
+				</div>
+				<div class="pb_con">
+					<div class="pb_tbar">
+						<div class="pb_cbar"></div>
+					</div>
+					<div class="pb_dot"></div>
+					<div class="duration">
+						<span class="ctime">00:00</span>
+						<span> / </span>
+						<span class="ttime">00:00</span>
+					</div>
+				</div>
+			</div>
+			<div class="pb_ctrls">
+				<a href="javascript:;">
+					<i class="coll_icon"></i>
+				</a>
+				<a href="javascript:;">
+					<i class="share_icon"></i>
+				</a>
+				<a href="javascript:;">
+					<i class="vol_icon"></i>
+				</a>
+				<a href="javascript:;">
+					<i class="loop_icon"></i>
+				</a>
+				<a href="javascript:;">
+					<i class="plist_icon"></i>
+				</a>
+			</div>
+		</div>
+		<audio src="img/3331052726.mp3" id='aud'></audio>
+		<div class="pb_lock">
+			<a href="javascript:;">
+				<i class="unlock_icon"></i>
+			</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+
+

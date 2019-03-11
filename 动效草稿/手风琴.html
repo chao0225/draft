@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<style>
+		.accordion{width:80%; margin:0 auto;}
+		.accordion>.title{
+			background:#eee; border:1px soild #aaa;
+			padding:6px; font-size:1.5em; 
+			font-weight:bold; cursor:pointer;
+		}
+	</style>
+ </head>
+ <body>
+	<h1>使用“高度动画”实现“手风琴”组件</h1>
+	<div class="accordion">
+		<div class="title">《西游记》简介</div>
+		<div class="content">一个和尚和四个动物的故事: </div>
+		<div class="title">《水浒传》简介</div>
+		<div class="content ">105个男人和三个女人的故事: </div>
+		
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$(".accordion>.content:gt(0)").hide();//除了第一个全部隐藏
+
+		$(".accordion").on("mouseover",".title",function(){
+			var $title=$(this);
+			$title.next() //当前content
+						.hide() //切换: 如果现在是隐藏，就换为显示，如果现在是显示，就换为隐藏
+						.siblings(".content") //其它content
+						.show();	
+		})
+	</script>
+ </body>
+</html>

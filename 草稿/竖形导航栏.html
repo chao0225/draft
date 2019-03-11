@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+        @media (max-width: 1199px)
+        html, body, p {
+            font: 14px/1.75 Microsoft Yahei;
+        }
+        @media (max-width: 1599px)
+        html, body, p {
+            font: 15px/1.8 Microsoft Yahei;
+        }
+*/
+        ul{
+            width:200px;
+            list-style:none;
+        }
+        ul li{
+            width:300px;
+            height:60px;
+            text-align:center;
+            cursor: pointer;
+            transition: .6s .95s;
+            border:1px solid red;
+            line-height: 60px;
+            position:relative;
+            z-index: 10;
+        }
+        ul li i{
+            display:inline-block;
+            width:0px;
+            height:60px;
+            transition: all .3s linear;
+            position:absolute;
+            top:0;
+            left:0;
+            text-align:center;
+            color:red;  
+            opacity: 0;
+        }
+        ul li:hover i{
+            width:300px;
+            background:black;  
+            opacity: 1; 
+        }
+        ul li:hover{
+            color:red;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <ul>
+        <li>横看成岭侧成峰<i>横看成岭侧成峰</i></li>
+        <li>远近高低各不同<i>远近高低各不同</i></li>
+        <li>横看成岭侧成峰<i>横看成岭侧成峰</i></li>
+        <li>远近高低各不同<i>远近高低各不同</i></li>
+    </ul>
+   
+</body>
+</html>

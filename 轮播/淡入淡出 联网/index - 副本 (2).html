@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	#banner { 
+			position: relative;
+			width: 478px; height: 286px;
+			border: 1px solid #666;
+			overflow: hidden;
+	}
+	#banner_list img {	 border: 0px;	 }
+	#banner ul { 
+			position: absolute;
+			list-style-type: none; 
+			opacity: 0.8;
+			z-index: 1002; 
+			margin: 0; 
+			padding: 0;
+			bottom: 3px; 
+			right: 5px;
+	}
+	#banner ul:after{
+			content:"";
+			display:block;
+			clear:both;
+	}
+	#banner ul li { 
+			padding: 0px 8px;
+			float: left; 
+			display: block; 
+			color: #FFF; 
+			background: #6f4f67;
+			cursor: pointer;
+			border: 1px solid #333; 
+	}
+	#banner ul li.on {		background-color: #000;		}
+	#banner_list a {		position: absolute;		 }
+
+
+	.prev {
+    position:absolute;
+    left:0px;
+    top:150px;
+    float:left;
+    border-left:solid 1px rgba(251,245,246,1.00);
+    opacity:0.5;
+	z-index: 1060;
+}
+.next {
+    width:15px;
+    height:50px;
+    position:absolute;
+    right:0px;
+    top:150px;
+    float:right;
+    border-right:solid 1px rgba(245,237,237,1.00);
+    opacity:0.5
+	z-index: 1060;
+}
+
+<!--
+让四张图片都可以重叠在一起-->
+</style>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+
+<script type="text/javascript">
+		var t = n =0, count;
+		$(document).ready(function(){ 
+			count=$("#banner_list a").length;  //a 的 个数
+		$("#banner_list a:not(:first-child)").hide();  //除了第一张图片其他隐藏
+		
+		/*$("#banner_info").html($("#banner_list a:first-child")
+		.find("img").attr('alt'));
+
+		$("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});*/
+
+		$("#banner li").mouseover(function() {
+				var i = $(this).text() -1;//获取Li元素内的值，即1，2，3，4
+					n = i;
+			if (i >= count) return;
+	/*$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
+		$("#banner_info").unbind().click(function(){
+			window.open($("#banner_list a").eq(i).attr('href'), "_blank")})*/
+		
+			$("#banner_list a").filter(":visible").fadeOut(500)
+			.parent().children().eq(i).fadeIn(1000);  //图片淡入淡出
+
+			document.getElementById("banner").style.background="";//最外层父元素背景颜色为空
+				$(this).toggleClass("on");
+				$(this).siblings().removeAttr("class");//其他li 中的数字移除 on
+			});
+			t = setInterval("showAuto()", 4000);  //定时器4s
+
+			$("#banner").hover(function(){	clearInterval(t)	 
+				},function(){
+					t = setInterval("showAuto()", 4000);
+					}
+				);//鼠标移入图片清除定时器
+
+				/*两边箭头*/
+			$(".next").stop(true,true).click(function (){
+				 n++;
+				 if(n==count){n=0};
+				 count.eq(n).trigger("click");
+				 });
+			$(".prev").stop(true,true).click(function (){
+				n--;
+				if(n==count){n=0};
+				count.eq(n).trigger("click");
+				});
+		})
+
+	function showAuto(){
+			n = n >=(count -1) ?0 : ++n;
+			$("#banner li").eq(n).trigger('mouseover');
+	}
+	
+</script>
+</head>
+
+<body>
+<div id="banner">
+  <ul>
+    <li class="on">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <div id="banner_list"> 
+		<a href="#"><img src="imgs/p1.jpg" title="jquery插件库1" /></a> 
+		<a href="#"><img src="imgs/p2.jpg" title="jquery插件库2" /></a> 
+		<a href="#"><img src="imgs/p3.jpg" title="jquery插件库3" /></a> 
+		<a href="#"
+		
+		<img src="imgs/p1.jpg" title="jquery插件库4" /></a> 
+ </div>
+  <div class="prev">
+		<img src="imgs/6.jpg" width="30" height="50" alt=""/>
+	</div>
+    <div class="next">
+		<img src="imgs/7.jpg" width="30" height="50" alt=""/>
+	</div>
+</div>
+<script src="http://www.jq22.com/js/jq.js"></script>
+</body>
+</html>

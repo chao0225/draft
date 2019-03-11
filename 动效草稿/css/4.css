@@ -1,0 +1,18 @@
+div[id^="a"]{position:absolute;
+			font-size:2.5em; text-align:center;
+			width:21px; height:15px;
+			left: 125px;
+			transform-origin:105% 150px;
+
+}
+#a1{transform:rotate(30deg); top:5px;left: 140px;}
+#a2{transform:rotate(60deg)}
+#a3{transform:rotate(90deg)}
+#a4{transform:rotate(120deg)}
+#a5{transform:rotate(150deg)}
+#a6{transform:rotate(180deg)}
+#a7{transform:rotate(210deg)}
+#a8{transform:rotate(240deg)}
+#a9{transform:rotate(270deg); top:-10px;left: 125px;}
+#a10{transform:rotate(300deg); top:-10px;left: 130px;}
+#a11{transform:rotate(330deg)}

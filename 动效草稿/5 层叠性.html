@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+		.container {
+      width: 500px;
+      height: 100px;
+      border: 5px solid lightgrey;
+      font-size: 0;
+    }
+    .container li {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      
+      line-height: 50px;
+      border-radius: 50%;
+      
+      font-size: 14px;
+      text-align: center;
+    }
+    .container li:nth-child(2){
+      background: red;
+	  margin-left: -50px;
+	  display:none;
+    }
+    .container li:nth-child(3){
+      background: yellow;
+		margin-left: -50px;
+		display:none;
+    }
+	.container li:nth-child(4){
+      background: blue;
+	  margin-left: -50px;
+	  display:none;
+    }
+	.first{
+		display:none;
+		background:gray;
+	}
+	li.active{
+		display:block;
+	}
+  </style>
+</head>
+<body>
+
+<ul class="container">
+  <li class="first active">1</li>
+  <li class="second">2</li>
+  <li class="second">3</li>
+  <li class="second">4</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	<style>
+	.banner .banner1 {
+		width: 300px;
+		height: 300px;
+		box-sizing: border-box;
+		overflow: hidden;
+		position: relative;
+		
+		}
+	.banner1 ul, .banner2 ul, .banner3 ul {
+		list-style: none;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		z-index: 5;
+	}
+	.banner1 ul li, .banner2 ul li, .banner3 ul li {
+		position: relative;
+		float: left;
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+	}
+	
+	.banner1 .banner1_bg, .banner2 .banner2_bg, .banner3 .banner3_bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 300px;
+		height: 300px;
+		background: url(img/666.jpg) no-repeat;
+		z-index: 1;
+		transform: scale(1.5);
+		transition-duration: 1s;
+	}
+
+	.banner1 ul li span, .banner2 ul li span, .banner3 ul li span {
+		display: inline-block;
+		width: 150px;
+		height: 150px;
+		background: url("img/6666.jpg") no-repeat top left;
+		transition-duration: 1s;
+	}
+	.banner1 ul li:nth-child(2) span{
+		background: url("img/6666.jpg") no-repeat top right;
+	}
+	.banner1 ul li:nth-child(3) span{
+		background: url("img/6666.jpg") no-repeat bottom left;
+	}
+	.banner1 ul li:last-child span{
+		background: url("img/6666.jpg") no-repeat bottom right;
+	}
+
+	/*hover*/
+	.banner1:hover .banner1_bg,.banner2:hover .banner2_bg,.banner3:hover .banner3_bg{
+		transform:scale(1);
+		transition-duration:1s;
+	}
+	.banner1:hover ul li:nth-child(1) span,.banner2:hover ul li:nth-child(1) span,.banner3:hover ul li:nth-child(1) span{
+		transform:translate(0,150px);
+		transition-duration:1s;
+	}
+	.banner1:hover ul li:nth-child(2) span,.banner2:hover ul li:nth-child(2) span,.banner3:hover ul li:nth-child(2) span{
+		transform:translate(-150px,0); 
+		transition-duration:1s; 
+	}
+	.banner1:hover ul li:nth-child(3) span,.banner2:hover ul li:nth-child(3) span,.banner3:hover ul li:nth-child(3) span{
+		transform:translate(150px,0); 
+		transition-duration:1s; 
+	}
+	.banner1:hover ul li:nth-child(4) span,.banner2:hover ul li:nth-child(4) span,.banner3:hover ul li:nth-child(4) span{
+		transform:translate(0px,-150px); 
+		transition-duration:1s; 
+	}
+	</style>
+</head>
+<body>
+<div class="banner">
+   <div class="banner1">
+		<ul>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+		</ul> 
+		<span class="banner1_bg"></span>
+	</div>
+</div>
+</body>
+</html>

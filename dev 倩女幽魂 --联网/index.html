@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <!--[if IE 6 ]> <html class="ie6 lte_ie6 lte_ie7 lte_ie8" lang="zh-CN"> <![endif]-->  
+  <!--[if lte IE 6 ]> <html class="lte_ie6 lte_ie7 lte_ie8" lang="zh-CN"> <![endif]-->  
+  <!--[if lte IE 7 ]> <html class="lte_ie7 lte_ie8" lang="zh-CN"> <![endif]-->  
+  <!--[if lte IE 8 ]> <html class="lte_ie8" lang="zh-CN"> <![endif]-->  
+  <!--[if (gte IE 9)|!(IE)]><!--><html lang="zh-CN"><!--<![endif]-->  
+  <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  
+	.accrodion-group{
+		width:1000px;
+		height:450px;
+	}
+  </style>
+</head>
+<body>
+<!-- <p style="padding-left: 50px;">
+    { <br/>
+      imageObj      : [],           //存放图片对象<br/>
+      arrangement   : "horizontal", //verticality 对齐方式<br/>
+      fontCut       : 500,          //文字截取（500个字符内）<br/>
+      defaultWidth  : 100,          //默认初始宽度<br/>
+      defaultHeight : 100,          //默认初始高度<br/>
+      animateWidth  : 600,          //默认放大宽度<br/>
+      animateHeight : 200,          //默认放大高度<br/>
+      response      : true,         //是否使用响应式<br/>
+      styleColor    : {"background":"white","font":"#333333","textShadow":"0px 0px 1px green"}, //自定义遮罩颜色样式<br/>
+      animateTime   : "2s",       //动画速度<br/>
+    };<br/>
+</p> -->
+
+<div class='accrodion-group'>
+  <div class='4-accordion' >
+  </div>
+</div>
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/accordion.js" type="text/javascript" charset="utf-8"></script>
+<script src='js/data.js'></script>
+<script>
+	$(document).ready(function() {
+  $('[class*="-accordion"]').not(':first').parents('.accordion-DIV').hide();
+  $('.btn-group > button').on('click',  function(event) {
+    event.preventDefault();
+    var _index_ = $(this).index();
+    $('[class*="-accordion"]').eq(_index_).parents('.accordion-DIV').show().siblings().hide();
+		});
+	});
+  $('.4-accordion').accordion({
+    "imageObj": horiObj.imageObj,
+    "animateTime":"2s"
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

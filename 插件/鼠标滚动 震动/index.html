@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实用的纯JS和CSS3页面滚动动画库插件</title>
+<link rel="stylesheet" href="css/kissui.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/scrollanim.min.css">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="row">
+    <div data-kui-anim="fadeIn" class="one-half column custom-column" style="margin-top: 25%;">
+      <h4>Easy to use</h4>
+      <p><b>Scrollanim</b> has many builtin CSS3 animations to use. All you need to do is to add <code>data-kui-anim</code> attribute to your elements.</p>
+      <pre style="text-align: left;"> 
+			            <code>&lt;div data-kui-anim=&quot;fadeIn&quot;&gt;
+			  Show this with a fadeIn animation.
+			&lt;/div&gt;</code>
+			        </pre>
+      <p style="text-align: left;">Cool, isn't it?</p>
+    </div>
+  </div>
+  <div class="row">
+    <div data-kui-anim="rubberBand" class="one-half column custom-column" style="margin-top: 25%;">
+      <h4>Advanced mode</h4>
+      <p style="text-align: left;">Also, this is possible to add the animations using the JavaScript API.</p>
+      <pre style="text-align: left;"> 
+			            <code>kissuiScrollAnim.add(element, {
+			  'in': 'fadeIn',
+			  'out': 'fadeOut'
+			});</code>
+			        </pre>
+      <p style="text-align: left;"><b>Scrolanim</b> supports all available positions for an element on the page. Also, you can use a compound event name (e.g. <code>in center middle</code>)</p>
+    </div>
+  </div>
+  <div class="row">
+    <div data-kui-anim="bounce" class="one-half column custom-column" style="margin-top: 25%;">
+      <h4>CSS3 Animations</h4>
+      <p><b>Scrolanim</b> has many CSS3 animations to use. No JavaScript animations, better performance.</p>
+      <p>Works on desktop and portable devices perfectly.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div data-kui-anim="infinite pulse" class="one-half column custom-column" style="margin-top: 25%;">
+      <h4>Infinite animation</h4>
+      <p>Also, animations names accept an optional parameter <code>infinite</code> to repeat the animation forever.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="one-half column custom-column" style="margin-top: 25%;" id="specialelement">
+      <h4>Perfect event control</h4>
+      <p><b>Scrollanim</b> controls all elements with an extra care. You can attach events to almost all possible positions of an element on the page.</p>
+      <p>For instance, this element appears with a <code>fadeIn</code> animation but also gets a <code>pulse</code> animations when it's in the middle of the page.</p>
+    </div>
+  </div>
+</div>
+
+<script src='js/scrollanim.min.js'></script> 
+<script>
+	    kissuiScrollAnim.add(document.getElementById('specialelement'), {
+	        'in': 'fadeIn',
+	        'middle': 'pulse'
+	    });
+</script>
+	  
+</body>
+</html>

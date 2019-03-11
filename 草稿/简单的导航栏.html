@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+    }
+    ul{
+		width: 1100px;
+		height: 100px;
+		display: block;
+	}
+	
+	.nav{
+		width: 200px;
+		height: 100px;
+		background: #000;
+		display: block;
+		float: left;
+		border: 1px solid #fff;
+		text-align: center;
+		line-height: 100px;
+		
+	}
+ 
+	.active{
+		color: #fff;
+		background: red;
+	}
+ 
+	.big_wrap{
+		position: relative;
+	}
+	.div{
+		width: 1100px;
+		height: 300px;
+		background:green;
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+</style>
+<body>
+    <ul class="navlist">
+		<li class="nav">1</li>
+		<li class="nav">2</li>
+		<li class="nav">3</li>
+		<li class="nav">4</li>
+		<li class="nav">5</li>
+	</ul>
+	<div class="big_wrap">
+		<div class="div">1</div>
+		<div class="div">2</div>
+		<div class="div">3</div>
+		<div class="div">4</div>
+		<div class="div">5</div>
+	</div>
+ 
+	
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+$('.navlist .nav:first').addClass('active')    
+ 
+ $('.navlist .nav').hover(function(){
+     var index=$(this).index();     
+     $(this).addClass('active');                   
+     $(this).siblings().removeClass('active');  
+     $('.big_wrap .div').eq(index).show();
+     $('.big_wrap .div').eq(index).siblings().hide();
+ },function(){
+      var index=$('.navlist .nav').index(this);     
+      $('.big_wrap .div').eq(index).hide();       		       	     	
+ })
+ $('.big_wrap .div').hover(function(){
+     $(this).show();
+ },function(){
+     $(this).hide();    
+ })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+   
+	ul{
+		
+		display: flex;
+		width: 150px;
+    height: 50px;
+		display:inline-block;
+	}
+  </style>
+</head>
+<body>
+
+<hr>
+<hr>
+<div>
+	<ul>
+      <li class="tab" data-tab="super-box">
+        <p class="wxinz active">豪华VIP</p>
+      </li>
+      <li class="tab" data-tab="music-box">
+        <p class="wxinz">音乐包</p>
+      </li>
+	  <li class="tab" data-tab="s3-box">
+        <p class="wxinz">音乐包</p>
+      </li>
+    </ul>
+	<div>
+      <div class="super-box box">
+        <div><img src="img/1.jpg"></div>
+        <div>
+          <p>豪华VIP</p>
+          <p>15 元/月</p>
+        </div>
+      </div>
+	  <div class="music-box box" style="display:none;">
+        <div><img src="img/2.jpg"></div>
+        <div>
+          <p>音乐包</p>
+          <p>36 元/月</p>
+        </div>
+      </div>
+	  <div class="s3-box box" style="display:none;">
+        <div><img src="img/3.jpg"></div>
+        <div>
+          <p>是个好多个就</p>
+          <p>12545 元/月</p>
+        </div>
+      </div>
+	</div>
+</div>
+<div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+
+<script>
+  $(document).on('mouseover', '.tab', function() {
+		  $('.wxinz').removeClass('active');
+		  $(this).children('.wxinz').addClass('active');
+		  $('.box').hide();
+		  $("." + $(this).attr('data-tab')).show();
+  });
+  
+  
+</script>
+</body>
+</html>

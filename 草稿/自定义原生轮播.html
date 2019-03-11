@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    *{
+      margin:0;
+    }
+    #cantent{
+      position:relative;
+      left:30%;
+    }
+    #slider{
+      width:400px; height:300px;
+      position:relative;
+      border:1px solid #555;
+    }
+    #slider>img{
+      width:400px; height:300px;
+      position:absolute; top:0; left:0;
+      opacity:0;
+      transition:all .5s linear;
+    }
+    #slider>img.show{  opacity:1; z-index: 10; }
+
+    #jiantou{ 
+      position: absolute;;
+      width:400px; height:300px;
+      top:0; left:0;
+    }
+    .prev,.next{
+      width:40px; height:60px;
+      font-size:35px;
+      position:absolute; top:45%;
+      color: #fff;
+      background:rgba(0,0,0,.5);
+      cursor: pointer;
+      text-align: center;
+      line-height: 55px;
+      border-radius: 5px; 
+      z-index: 20;
+    }
+    .prev{
+      left:8%;
+    }
+    .next{
+      right:8%;
+    }
+    /* 点点 */
+    #dian{
+      position:absolute;
+      bottom:5%;left:7%;
+      z-index:20;
+    }
+    #dian span{
+      display: inline-block;
+      width:30px;
+      height:30px;
+      margin:10px;
+      background: black;
+      color:red;
+      border-radius:50%;
+      text-align:center;
+      line-height:30px;
+    }
+    #dian span.on{
+      background: red;
+      color:black;
+    }
+  </style>
+</head>
+<body>
+  <div id="cantent">
+    <div id="slider">
+      <img src="images/1.jpg" class="show" alt="一心一意"/>
+      <img src="images/2.jpg" alt="二"/>
+      <img src="images/3.jpg" alt="三"/>
+      <img src="images/4.jpg" alt="四面八方"/>
+    </div>
+    <div id="jiantou">
+        <div class="prev"><</div>
+        <div class="next">></div>
+    </div>
+    <div id="dian">
+      <span class="on">1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+    </div>
+</div>
+<script>
+  
+
+  var imgs=slider.children;
+  for(var img of imgs){
+    img.onclick=function(){
+      var img=this;
+      alert(img.alt);
+    }
+  }
+  var prev=jiantou.getElementsByClassName("prev")[0];
+  var next=jiantou.getElementsByClassName("next")[0];
+  next.onclick=function(){
+    var img=slider.getElementsByClassName("show")[0];
+    img.className="";
+    if(img.nextElementSibling)
+    img.nextElementSibling.className="show";
+    else
+    img.parentNode.children[0].className="show";
+  }
+  prev.onclick=function(){
+    var img=slider.getElementsByClassName("show")[0];
+    img.className="";
+    if(img.previousElementSibling)
+    img.previousElementSibling.className="show";
+    else
+    img.parentNode.children[3].className="show";
+  }
+  /*  圆点 */
+  var n =0,count;
+  var img=slider.children;
+  var count=img.length;
+  console.log(count);
+  dian.onclick=function(e) {
+    alert("啊");
+    console.log(11111);
+    var btn=e.target;
+    if(btn.nodeName==="SPAN"){
+        var i =count -1;//获取Li元素内的值，即1，2，3，4
+        n = i;
+        if (i >= count) return;
+        btn.getAttribute("on");
+        btn.previousElementSibling.removeAttribute("on");
+    }
+};
+/*
+function showAuto(){
+		n = n >=(count -1) ?0 : ++n;
+		$("#banner li").eq(n).trigger('click');
+    }*/
+    
+    function task(){
+      var img=slider.getElementsByClassName("show")[0];
+      img.className="";
+      if(img.nextElementSibling)
+      img.nextElementSibling.className="show";
+      else
+      img.parentNode.children[0].className="show";
+      
+    }
+    var timer=setInterval(task,2000);
+    
+    cantent.onmouseover=function(){
+      clearInterval(timer);
+    }
+    cantent.onmouseout=function(){
+      timer=setInterval(task,2000);
+    }
+</script>
+</body>
+</html>

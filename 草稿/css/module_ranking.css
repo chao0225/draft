@@ -1,0 +1,222 @@
+body {
+    font-family: basefont, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+*{
+    margin:0;
+    padding: 0;
+}
+
+a {
+    color: #222;
+}
+ul,ol{
+    list-style: none;
+}
+div.ranking_wrap {
+    width: 860px;
+    background-color: #FFF;
+    position: relative;
+}
+
+div.ranking_wrap h2 {
+    /*font-family: basefont, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 30px 0 20px;
+    font-size: 26px;
+    letter-spacing: 8px;
+}
+
+div.ranking_wrap p {
+    position: relative;
+    font-size: 11px;
+    letter-spacing: 1px;
+    float: right;
+    top: -40px;
+    right: 30px;
+}
+
+div.tab {
+    float: left;
+    width: 850px;
+    padding-top: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+div.tab ul#tabnavi {
+    /*font-family: basefont, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    display: block;
+    width: 800px;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+li.btn{
+    float: left;
+    width: 148px;
+    padding:5px;
+    margin: 5px;
+    background: #d9d9d9;
+    text-align: center;
+    list-style:none;
+    border-radius: 3px;
+  }
+  li.btn.active{
+    background: black;
+    color:#fff;
+  }
+
+div.tab ul#tabnavi li {
+    display: table-cell;
+    margin: 1px 6px;
+    width: 148px;
+    float: left;
+    background: #d9d9d9;
+    text-align: center;
+}
+
+div.tab ul#tabnavi li a {
+    display: block;
+    text-decoration: none;
+    width: 148px;
+    padding: 10px 0;
+}
+
+div.tab ul#tabnavi li a:hover,
+#tabnavi li a.active {
+    background: #000;
+    color: #FFF;
+    width: 148px;
+}
+
+
+div.tab div#tabcontent li.big {
+    width: 252px;
+    float: left;
+    padding: 25px 0 10px 22px;
+    position: relative;
+}
+
+div.tab div#tabcontent li.small {
+    width: 185px;
+    float: left;
+    padding: 25px 0 10px 20px;
+    position: relative;
+}
+
+div.tab div#tabcontent li:first-child {
+    padding-left: 0;
+}
+
+div.tab div#tabcontent li:nth-child(4),div.tab div#tabcontent li:nth-child(8) {
+    padding-left: 0;
+}
+
+div#tabcontent span {
+    display: block;
+    color: #222;
+}
+
+div#tabcontent span#rank_mark {
+    /*font-family: basefont, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+div#tabcontent span#rank_mark img {
+    width: 25px;
+}
+
+div#tabcontent span#thumb img {
+    padding-top: 15px;
+    width: 100%;
+}
+
+div#tabcontent span#brand {
+    font-size: 9px;
+    float: left;
+    padding-right: 3px;
+    padding-top: 2px;
+}
+
+div#tabcontent span#item {
+    font-size: 12px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 13px;
+    padding-top: 4px;
+    letter-spacing: 0.05em;
+}
+
+div#tabcontent span#price {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+    height: 10px;
+    width: 110px;
+}
+
+div#tabcontent a span#favorite {
+    background: url(../images/bt_favorite.png) no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+}
+
+div#tabcontent a:hover span#favorite {
+    background: url(../images/bt_favorite2.png) no-repeat;
+    background-size: contain;
+}
+
+
+div#tabcontent a span#favorite span#favorite_text {
+    display: none;
+    width: 90px;
+    /*オキニ30px*/
+    position: absolute;
+    top: 44px;
+    left: -60px;
+    /*オキニ-1px*/
+    padding: 3px 5px;
+    border-radius: 2px;
+    background: #e83d5c;
+    color: #fff;
+    font-size: 11px;
+}
+
+div#tabcontent a span#favorite span#favorite_text:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 44px;
+    /*オキニ-0px*/
+    top: -10px;
+    margin-left: 14px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #e83d5c;
+    border-width: 6px;
+    pointer-events: none;
+    content: " ";
+}
+
+div#tabcontent a:hover span#favorite span#favorite_text {
+    display: block;
+}
+
+
+div.view_all {
+    clear: both;
+    padding-top: 40px;
+    text-align: right;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+div.view_all a:hover {
+    text-decoration: underline;
+}

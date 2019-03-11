@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+		#d1{
+			text-align:center;
+			margin-bottom:40px;
+		}
+		#d2{
+			text-align:center;
+			position:relative;
+		}
+		p{
+			display:inline-block;
+			width:300px;
+			height:300px;
+		}	
+		p:nth-child(1){
+			display:none;
+		}
+		 p:nth-child(2){
+			display:none;
+			margin-left:-300px;
+		}
+		 p:nth-child(3){
+			display:none;
+			margin-left:-300px;
+		}
+		#d2 .active{
+			
+			position:absolute;
+			left:500px;
+		}
+		a{
+			font-size:25px;
+			color:red;
+			margin:0 15px;
+		}	
+  </style>
+</head>
+<body>
+	<div id="d1">
+		<a href="#" id="a1">问你</a>
+		<a href="#" id="a2">寻寻</a>
+		<a href="#" id="a3">觅觅</a>
+	</div>
+	<div id="d2">
+		<p id="p1" class="active"><img src="img/1.jpg" alt="">什么都不懂</p>
+		<p id="p2"><img src="img/2.jpg" alt="">其实都不懂</p>
+		<p id="p3"><img src="img/3.jpg" alt="">偶然懵懂懂</p>
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$("#a1").mouseover(function(){
+			$("#p1").css("background-color","yellow")
+					.css("display","block");
+		});
+		$("#a2").mouseover(function(){
+			$("#p2").css("background-color","blue");
+		});
+		$("#a3").mouseover(function(){
+			$("#p3").css("background-color","red");
+		});
+	</script>
+</body>
+</html>

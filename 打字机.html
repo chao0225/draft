@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+        <div class="h5info">               
+        </div>
+        <script>
+            /*打字机效果*/
+            var str=`<p>如果您是承接大型会议/展览的会展公司，您希望为客户呈现一场与众不同的会务直播；<br>图文并茂早已过时，即使是绘声绘色视频也无法为观看者带来实时动态体验竞技带来的兴奋感缺乏真实感和融入感<br> 或者您是一家希望在会议现场进行品牌传播、企业形象展示的企业，<br>这时您需要具有沉浸感的VR直播帮您达到震撼、刺激、惊心动魄的LIVE视听感效果 </p> `;
+            var i = 0;
+            function typing(){
+                var divTyping = document.querySelector(".h5info");
+                if (i <= str.length){
+                divTyping.innerHTML = str.slice(3,10*i++) + '_';
+                setTimeout('typing()',200);//递归调用
+                }
+                else{
+                divTyping.innerHTML = str;//结束打字,移除 _ 光标
+                }
+            }
+            typing();
+        </script>
+</body>
+</html>
